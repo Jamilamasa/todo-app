@@ -30,10 +30,26 @@ function getTimeOfDay() {
 // Main content (time and greeting)
 const time = document.querySelector(".time");
 const greeting = document.querySelector(".greeting");
+
+
 // Time
 time.innerHTML = `<h1 class="lead-text">${getCurrtime()}</h1>`
 // Greeting 
 greeting.innerHTML = `<h2 class="m-heading">Good ${getTimeOfDay()}, Jamil.</h2>`
+
+// Background 
+document.addEventListener("DOMContentLoaded", changeBg)
+
+function changeBg() {
+    const container = document.querySelector('.container')
+    const bgs = ['benz','city','dodge','masjid','masjid-2','nature'];
+    let bgimg = 'background-image';
+    const rand = Math.floor(Math.random() * bgs.length);
+    const bg = bgs[rand];
+
+    container.style.backgroundImage = `url('/img/${bg}.jpg')`
+
+}
 
 
 

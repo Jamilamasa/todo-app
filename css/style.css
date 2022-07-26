@@ -22,6 +22,9 @@ a {
 ul {
     list-style: none;
 }
+input {
+    background-color: transparent;
+}
 /* Utility */
 .lead-text {
     font-size: 10rem;
@@ -39,11 +42,19 @@ ul {
 }
 /* Main styling */
 .main-content {
+    color: #fff;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 .taskForm label {
     display: block;
@@ -54,9 +65,10 @@ ul {
     padding: 1rem 1rem 0 1rem;
     line-height: 1.2;
     border: none;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid #fff;
     text-align: center;
     font-size: 2rem;
+    background-color: transparent;
 }
 .taskForm input:focus {
     outline: none;
@@ -67,6 +79,13 @@ ul {
     height: 100vh;
     width: 100vw;
     position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-repeat:  no-repeat;
+    background-position: center center;
+    background-size: cover ;
 }
 .time {
     margin: 1rem;
@@ -76,14 +95,3 @@ ul {
     padding: 0.3rem;
     margin-bottom: 0.8rem;
 }
-/* .container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: url('/img/city.jpg') no-repeat center center/cover;
-    opacity: 0.8;
-    z-index: -1;
-} */
