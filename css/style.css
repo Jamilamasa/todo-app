@@ -1,0 +1,89 @@
+/* font-family: 'Itim', cursive;
+font-family: 'Roboto', sans-serif; */
+:root {
+    --btn: #26a69a
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style: none;
+}
+/* Utility */
+.lead-text {
+    font-size: 10rem;
+    font-weight: 500;
+    letter-spacing: -5px;
+    line-height: 1;
+}
+.m-heading {
+    font-size: 2.5rem;
+    font-weight: 500;
+    
+}
+.s-heading {
+    font-size: 1.8rem;
+}
+/* Main styling */
+.main-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.taskForm label {
+    display: block;
+    text-align: center;
+}
+.taskForm input {
+    width: 100%;
+    padding: 1rem 1rem 0 1rem;
+    line-height: 1.2;
+    border: none;
+    border-bottom: 2px solid #000;
+    text-align: center;
+    font-size: 2rem;
+}
+.taskForm input:focus {
+    outline: none;
+    border-bottom: 2px solid #000;
+}
+.container {
+    padding: 1rem;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+.time {
+    margin: 1rem;
+    padding: 0.3rem;
+}
+.greeting {
+    padding: 0.3rem;
+    margin-bottom: 0.8rem;
+}
+/* .container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url('/img/city.jpg') no-repeat center center/cover;
+    opacity: 0.8;
+    z-index: -1;
+} */
