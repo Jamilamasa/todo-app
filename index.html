@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Itim&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://kit.fontawesome.com/e5167b9010.js" crossorigin="anonymous"></script>
     <title>To-do List</title>
 </head>
 <body>
@@ -15,6 +17,10 @@
     <div class="container">
         <!-- Main Content -->
         <div class="main-content">
+            <h4 id="toDoText">To-Do</h4>
+            <form class="getName">
+                <input type="text" id="enterName" placeholder="Please enter your name" autocomplete="off">
+            </form>
             <div class="time">
             <!-- Time will be inserted using js -->
             </div>
@@ -25,21 +31,21 @@
                 <label for="task" class="s-heading">What is your focus for today?</label>
                 <input type="text" name="task" id="task-input" autocomplete="off">
             </form>
+            <span class="material-symbols-outlined" title="Change Backgroud Image">settings</span>
         </div>
+
         <!-- To-do list -->
         <div class="to-do">
             <div id="filter-group">
-                <label for="filter">Filter</label>
-                <input type="text" id="filter">
+                <input type="text" id="filter" placeholder="Filter">
             </div>
             <ul class="tasks">
-                <li class="task-item">Eat bro</li>
+                <!-- <li class="task-item"><input type="checkbox" name="complete" id="complete"><span>Eat bro</span><a class="delete"><i class="fa-solid fa-xmark"></i></a></li> -->
             </ul>
             <input class="clearBtn" type="button" value="Clear Task">
         </div>
 
     </div>
-
 
     <script src="./js/app.js"></script>
 </body>
