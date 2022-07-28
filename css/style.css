@@ -26,7 +26,7 @@ a {
 ul {
     list-style: none;
 }
-.taskForm input, #filter {
+.taskForm #task-input, #filter {
     background-color: transparent;
 }
 
@@ -97,7 +97,41 @@ ul {
     box-shadow:  5px 5px 10px #7d7d7d,
              -5px -5px 10px #ffffff;
 }
-
+.addTaskBtn {
+    font-weight: 700;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: #e0e0e0 solid 2px; 
+    border: none;
+    /* border-radius: 11px; */
+    background: #e0e0e0;
+    padding: 10px;
+    display: block;
+    margin: 1rem auto;
+    
+    /* box-shadow:  7px 7px 14px #5a5a5a,
+             -7px -7px 14px #ffffff;    */
+}
+.addTaskBtn:hover {
+    background-color: #d1d1d1;
+}
+.addName {
+    font-weight: 700;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: #e0e0e0 solid 2px; 
+    border: none;
+    /* border-radius: 11px; */
+    background: #e0e0e0;
+    padding: 10px;
+    display: block;
+    margin: 1rem auto; 
+}
+.addName:hover {
+    background-color: #d1d1d1;
+}
 /* Main styling */
 .main-content {
     padding: 1rem;
@@ -125,7 +159,7 @@ ul {
     display: block;
     text-align: center;
 }
-.taskForm input {
+.taskForm #task-input {
     width: 100%;
     padding: 1rem 1rem 0 1rem;
     line-height: 1.2;
@@ -154,7 +188,7 @@ ul {
     outline: none;
     border-bottom: 2px solid #fff;
 }
-.taskForm input:focus {
+.taskForm #task-input:focus {
     outline: none;
     border-bottom: 2px solid #fff;
 }
@@ -189,6 +223,7 @@ ul {
     background-color: #fff;
     border-radius: 3px;
     display: none;
+    width: 17%;
 }
 .to-do::after {
     content: " ";
@@ -201,7 +236,7 @@ ul {
   border-bottom: 15px solid #fff;
   height: 8px;
 }
-.to-do #filter {
+/* .to-do #filter {
     width: 100%;
     font-size: 1rem;
     text-align: center;
@@ -211,7 +246,7 @@ ul {
 }
 .to-do #filter:focus {
     outline: none;
-}
+} */
 .tasks {
     margin: 0.5rem 0 1rem 0;
     border: 1px solid #e0e0e0;
@@ -224,4 +259,38 @@ ul {
     padding: 5px 10px;
     font-size: 1rem;
     border-bottom: 1px solid #e0e0e0;
+}
+/* Settings */
+.settings {
+    position: absolute;
+    padding: 0rem;
+    bottom: 4.5rem;
+    left: 1.3rem;
+    background-color: #fff;
+    border-radius: 3px;
+    display: none;
+    width: 19%;
+}
+.settings::after {
+    content: '';
+    position: absolute;
+    left: 7.5px;
+    bottom: -12px;
+    border-top: solid 15px #fff;
+    border-left: solid 15px transparent;
+    border-right: solid 15px transparent;
+    border-bottom: none;
+}
+.settings .settings-item {
+    line-height: 1.5rem;
+    padding: 5px 10px;
+    font-size: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    cursor: pointer;
+}
+.settings .settings-item i {
+    padding: 0 10px;
+}
+.settings .settings-item:hover {
+    background-color: #d1d1d1;
 }

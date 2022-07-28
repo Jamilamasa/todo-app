@@ -29,9 +29,9 @@ function getTimeOfDay() {
 // Main content (time and greeting)
 const time = document.querySelector(".time");
 const greeting = document.querySelector(".greeting");
-const settingsBtn = document.querySelector(".material-symbols-outlined");
+const bgSetting = document.querySelector(".changeBg")
 const nameForm = document.querySelector('.getName');
-const nameInput = document.querySelector('#enterName')
+const nameInput = document.querySelector('#enterName');
 
 // Time
 time.innerHTML = `<h1 class="lead-text">${getCurrtime()}</h1>`;
@@ -63,7 +63,7 @@ function addNameToLocalStorage(name) {
 
 // Background
 document.addEventListener("DOMContentLoaded", changeBg);
-settingsBtn.addEventListener("click", changeBg);
+bgSetting.addEventListener("click", changeBg);
 
 function changeBg() {
   const container = document.querySelector(".container");
@@ -107,8 +107,8 @@ function loadAllEventListeners() {
   taskForm.addEventListener("submit", addTask);
   taskList.addEventListener("click", removeTask);
   clearBtn.addEventListener("click", clearTask);
-  filter.addEventListener("keyup", search);
-  document.addEventListener("DOMContentLoaded", getTask)
+  // filter.addEventListener("keyup", search);
+  document.addEventListener("DOMContentLoaded", getTask);
 }
 function getTask() {
     let todos;
@@ -166,6 +166,7 @@ function addTask(e) {
     li.appendChild(del);
     // Append li to ul
     taskList.appendChild(li);
+
     // Add to LS
   addTodoToLocalStorage(taskInput.value);
 
@@ -174,7 +175,6 @@ function addTask(e) {
 
   e.preventDefault();
 }
-
 function addTodoToLocalStorage(todo) {
   let todos;
   if (localStorage.getItem("todos") === null) {
@@ -223,19 +223,18 @@ function clearTask(e) {
   e.preventDefault();
 }
 // Filter task
-function search(e) {
-  const text = e.target.value.toLowerCase();
-
-  const items = document.querySelectorAll(".task-item");
-  items.forEach(function (item) {
-    const x = item.firstChild.textContent.toLowerCase();
-    if (x.indexOf(text) != -1) {
-      item.style.display = "block";
-    } else {
-      item.style.display = "none";
-    }
-  });
-}
+// function search(e) {
+//   const text = e.target.value.toLowerCase();
+//   const items = document.querySelectorAll(".task-item");
+//   items.forEach(function (item) {
+//     const x = item.firstChild.textContent.toLowerCase();
+//     if (x.indexOf(text) != -1) {
+//       item.style.display = "block";
+//     } else {
+//       item.style.display = "none";
+//     }
+//   });
+// }
 
 // Show todo-list
 const todoShow = document.querySelector(".to-do");
@@ -250,3 +249,31 @@ function show(e) {
   }
   e.preventDefault();
 }
+
+
+// Show settings 
+const settingsBtn = document.querySelector(".material-symbols-outlined");
+const settings = document.querySelector(".settings")
+settingsBtn.addEventListener("click", showSettings);
+ function showSettings(e) {
+  if (settings.style.display === "none") {
+    settings.style.display = "block"
+  } else {
+    settings.style.display = "none"
+  }
+  e.preventDefault();
+ }
+
+//  Clear all data
+const clr = document.querySelector(".clr");
+clr.addEventListener("click", clrData) 
+
+function clrData(e) {
+  if (confirm("Are you sure you want to clear all data?")){
+    greeting.innerHTML = `<h2 class="m-heading">Good ${getTimeOfDay()}, </h2>`;
+    localStorage.clear();
+    clearTask();
+  }
+  // e.preventDefault();
+}
+
